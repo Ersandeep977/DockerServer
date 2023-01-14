@@ -1,19 +1,15 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('ContinusDownlod') {
             steps {
-                echo 'Hello World'
-            }
-        }
-        stage('ContinusBuild') {
-            steps {
-                echo 'Hello World'
+                git 'https://github.com/Ersandeep977/Web-App-Host.git'
             }
         }
         stage('DockerFile') {
+            agent{ label 'docker-node' }
             steps {
-                echo 'Hello World'
+                sh 'docker info'
             }
         }
     }
