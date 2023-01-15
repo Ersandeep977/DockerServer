@@ -8,7 +8,7 @@ pipeline {
         }
         stage('ContinusBuild') {
             steps {
-                sh 'whoami'
+                sh 'sudo npm -v'
             }
         }
     }
