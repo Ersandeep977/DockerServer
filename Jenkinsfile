@@ -6,19 +6,14 @@ pipeline {
                 git 'https://github.com/Ersandeep977/benthon-web-app-host.git'
             }
         }
-        stage('ContinusBuild') {
-            steps {
-                echo 'hello'
-            }
-        }
         stage('CreateDockerImages') {
             steps {
-                echo 'hello'
+                sh "sudo docker build -t  patel977/benthon-web-app-host:${BUILD_TAG} ."
             }
         }
         stage('ImagesPushinHub') {
             steps {
-                echo 'hello'
+                  sh "sudo docker push patel977/benthon-web-app-host:${BUILD_TAG}"
             }
         }
         stage('Container-Run-On-EKS') {
