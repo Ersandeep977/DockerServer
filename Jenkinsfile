@@ -8,7 +8,7 @@ pipeline {
         }
         stage('ContinusBuild') {
             steps {
-                sh 'node -v'
+                sh 'whoami'
             }
         }
     }
