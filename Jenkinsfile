@@ -8,7 +8,7 @@ pipeline {
         }
         stage('ContinusBuild') {
             steps {
-                sh 'sudo npm -v'
+                sh 'node -v'
                 sh 'ls -al'
             }
         }
