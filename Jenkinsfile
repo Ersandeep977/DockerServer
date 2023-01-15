@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('ContinusDownloding') {
             steps {
@@ -8,8 +8,22 @@ pipeline {
         }
         stage('ContinusBuild') {
             steps {
-                sh 'npm i'
-                sh 'npm start'
+                echo 'hello'
+            }
+        }
+        stage('CreateDockerImages') {
+            steps {
+                echo 'hello'
+            }
+        }
+        stage('ImagesPushinHub') {
+            steps {
+                echo 'hello'
+            }
+        }
+        stage('Container-Run-On-EKS') {
+            steps {
+                echo 'hello'
             }
         }
     }
