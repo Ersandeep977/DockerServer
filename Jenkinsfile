@@ -16,9 +16,9 @@ pipeline {
                   sh "sudo docker push patel977/benthon-web-app-host:${BUILD_TAG}"
             }
         }
-        stage('Container-Run-On-EKS') {
+        stage('Container-Run-on-docker-compose') {
             steps {
-                echo 'hello'
+                sh 'sudo docker-compose up -d'
             }
         }
     }
