@@ -8,8 +8,8 @@ pipeline {
         }
         stage('ContinusBuild') {
             steps {
-                sh 'node -v'
-                sh 'ls -al'
+                sh 'npm i'
+                sh 'npm start'
             }
         }
     }
