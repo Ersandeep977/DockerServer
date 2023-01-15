@@ -8,7 +8,6 @@ pipeline {
         }
         stage('ContinusBuild') {
             steps {
-                sh 'npm -v'
                 sh 'node -v'
             }
         }
