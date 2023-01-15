@@ -1,10 +1,15 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('ContinusDownloding') {
             steps {
-                echo 'Hello World'
+                git 'https://github.com/Ersandeep977/benthon-web-app-host.git'
+            }
+        }
+        stage('ContinusBuild') {
+            steps {
+                sh 'npm -v'
+                sh 'node -v'
             }
         }
     }
